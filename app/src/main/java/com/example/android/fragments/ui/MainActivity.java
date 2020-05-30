@@ -36,16 +36,21 @@ public class MainActivity extends AppCompatActivity {
         if(savedInstanceState ==null) {
             BodyPartFragment headFrag = new BodyPartFragment();
             headFrag.setImageIds((ArrayList<Integer>) AndroidImageAssets.getHeads());
-            headFrag.setImageID(0);
+            int headIndex = getIntent().getIntExtra("headIndex", 0);
+            headFrag.setImageID(headIndex);
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().add(R.id.header_container, headFrag).commit();
             BodyPartFragment bodyFrag = new BodyPartFragment();
             bodyFrag.setImageIds((ArrayList<Integer>) AndroidImageAssets.getBodies());
-            bodyFrag.setImageID(0);
+            int bodyIndex = getIntent().getIntExtra("bodyIndex", 0);
+
+            bodyFrag.setImageID(bodyIndex);
             fragmentManager.beginTransaction().add(R.id.body_container, bodyFrag).commit();
             BodyPartFragment legFrag = new BodyPartFragment();
             legFrag.setImageIds((ArrayList<Integer>) AndroidImageAssets.getLegs());
-            legFrag.setImageID(0);
+            int legIndex = getIntent().getIntExtra("legIndex", 0);
+
+            legFrag.setImageID(legIndex);
             fragmentManager.beginTransaction().add(R.id.leg_container, legFrag).commit();
         }
     }
