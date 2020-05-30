@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:id="@+id/gridView"
+    android:name="com.example.android.fragments.ui.MasterFragment"
+    android:layout_height="wrap_content"
+    android:numColumns="3"
+    android:padding="5dp"
+    android:layout_gravity="center">
+
+</GridView>
